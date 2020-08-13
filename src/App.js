@@ -1,22 +1,36 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Welcome from "./components/welcome/Welcome";
 import Clock from "./components/clock/Clock";
 import Contact from "./components/contact/Contact";
 import Navigation from "./components/navigation/Navigation";
+import Error from "./components/error/Error";
 
 function App() {
   return (
     <div className="App">
       <Navigation />
-      <Route
-        exact
-        path="/"
-        render={(props) => <Welcome {...props} name="William" />}
-      />
-      <Route path="/Clock" component={Clock} />
-      <Route path="/Contact" component={Contact} />
+      <Switch>
+        <Route exact path="/">
+          <Welcome name="William" />
+        </Route>
+        <Route
+          path="/Welcome/:name"
+          render={(props) => (
+            <Welcome {...props} name={props.match.params.name} />
+          )}
+        />
+        <Route path="/Clock">
+          <Clock />
+        </Route>
+        <Route path="/Contact">
+          <Contact />
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
     </div>
   );
 }
