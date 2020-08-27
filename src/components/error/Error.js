@@ -1,6 +1,5 @@
 import React from "react";
 import pageNotFoundImage from "../../assets/images/404.jpg";
-import "./Error.css";
 
 function Error(props) {
   return (

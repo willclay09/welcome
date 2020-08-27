@@ -6,6 +6,7 @@ import Clock from "./components/clock/Clock";
 import Contact from "./components/contact/Contact";
 import Navigation from "./components/navigation/Navigation";
 import Error from "./components/error/Error";
+import Jeopardy from "./components/jeopardy/Jeopardy";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/Contact">
           <Contact />
+        </Route>
+        <Route>
+          <Jeopardy />
         </Route>
         <Route>
           <Error />
