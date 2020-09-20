@@ -9,6 +9,7 @@ class Contact extends Component {
       formData: {
         firstName: "",
         lastName: "",
+        email: "",
       },
     };
   }
@@ -34,6 +35,7 @@ class Contact extends Component {
       formData: {
         firstName: "",
         lastName: "",
+        email: "",
       },
     });
   };
@@ -71,6 +73,16 @@ class Contact extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={this.state.formData.email}
+              onChange={this.handleChange}
+            />
+          </div>
 
           <button>Submit Form</button>
         </form>
@@ -78,6 +90,8 @@ class Contact extends Component {
           {this.state.formData.firstName}
           <br />
           {this.state.formData.lastName}
+          <br />
+          {this.state.formData.email}
         </div>
       </div>
     );
